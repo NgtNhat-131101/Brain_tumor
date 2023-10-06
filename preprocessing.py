@@ -21,6 +21,10 @@ def preprocessing(data_folder, annotation_file, new_size=512):
         regions = image_data['regions']
         
         if regions[0]['shape_attributes']['name'] == 'polygon':
+            data_path = 'train_data'
+            image_train_path = os.path.join(data_path, image_data['filename'])
+            cv2.imwrite(image_train_path, image)
+            
             shape_attributes = regions[0]['shape_attributes']
             points_x = shape_attributes['all_points_x']
             points_y = shape_attributes['all_points_y']
