@@ -41,4 +41,4 @@ def preprocessing(data_folder, annotation_file, new_size=512):
 
 if __name__ == "__main__":
     preprocessing(data_folder='Br35H-Mask-RCNN\\TRAIN',
-                  annotation_file='Br35H-Mask-RCNN\Annotation\\annotations_train.json')
+                annotation_file='Br35H-Mask-RCNN\Annotation\\annotations_train.json')
