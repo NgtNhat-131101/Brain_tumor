@@ -2,6 +2,7 @@ brain_tumor/
 Br35H-Mask-RCNN/
 archive (1)/
 archive (1).zip/
-mask/
+mask_train/
 train_data/
-val_data/
+valid_data/
+mask_valid/

@@ -21,7 +21,7 @@ def preprocessing(data_folder, annotation_file, new_size=512):
         regions = image_data['regions']
         
         if regions[0]['shape_attributes']['name'] == 'polygon':
-            data_path = 'train_data'
+            data_path = 'valid_data'
             image_train_path = os.path.join(data_path, image_data['filename'])
             cv2.imwrite(image_train_path, image)
             
@@ -36,9 +36,11 @@ def preprocessing(data_folder, annotation_file, new_size=512):
             mask = cv2.resize(mask, (new_size, new_size))
 
             mask_filename = os.path.splitext(image_filename)[0] + '_mask.png'
-            mask_path = os.path.join('mask', mask_filename)
+            mask_path = os.path.join('mask_valid', mask_filename)
             cv2.imwrite(mask_path, mask)
 
 if __name__ == "__main__":
-    preprocessing(data_folder='Br35H-Mask-RCNN\\TRAIN',
-                annotation_file='Br35H-Mask-RCNN\Annotation\\annotations_train.json')
+    # preprocessing(data_folder='Br35H-Mask-RCNN\\TRAIN',
+    #             annotation_file='Br35H-Mask-RCNN\Annotation\\annotations_train.json')
+    preprocessing(data_folder = 'Br35H-Mask-RCNN\\VAL',
+                annotation_file='Br35H-Mask-RCNN\\Annotation\\annotations_val.json')
